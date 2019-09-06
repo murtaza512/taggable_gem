@@ -10,5 +10,13 @@
   <%= @restaurant.description %>
 </p>
 
+<h3>Related Products:</h3>
+
+<ul>
+  <% @related_restaurants.each do |r| %>
+    <li><%= r.name %></li>
+  <% end %>
+</ul>
+
 <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
 <%= link_to 'Back', restaurants_path %>

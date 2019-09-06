@@ -7,9 +7,18 @@ class RestaurantsController < ApplicationController
     @restaurants = Restaurant.all
   end
 
+  def tagged
+    if params[:tag].present?
+      @restaurants = Restaurant.tagged_with(params[:tag])
+    else
+      @restaurants = Restaurant.all
+    end
+  end
+
   # GET /restaurants/1
   # GET /restaurants/1.json
   def show
+    @related_restaurants = @restaurant.find_related_tags
   end
 
   # GET /restaurants/new
@@ -69,6 +78,6 @@ class RestaurantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def restaurant_params
-      params.require(:restaurant).permit(:name, :description)
+      params.require(:restaurant).permit(:name, :description, :tag_list)
     end
 end
