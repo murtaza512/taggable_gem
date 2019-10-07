@@ -6,3 +6,10 @@ jobs:
     steps:
       - checkout
       - run: echo "A first hello"
+  build:
+    docker:
+      - image: circleci/ruby:2.5.5
+    steps:
+      - checkout
+      - run: echo "A Second first hello"
+   
