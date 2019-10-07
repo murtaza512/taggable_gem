@@ -21,6 +21,9 @@ jobs:
       - checkout
       - run: echo "A third parrallel job/build"
       - run: sleep 20
+      - run:
+        name: Run test
+        command: bundle exec rails test
 
 workflows:
    version: 2
