@@ -23,7 +23,8 @@ jobs:
       - run: sleep 20
       - run:
         name: install gem
-        command: bundle install
+        command: |
+          bundle install
 
 workflows:
    version: 2
