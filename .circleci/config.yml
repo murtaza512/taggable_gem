@@ -24,9 +24,6 @@ jobs:
       - run:
         name: install gem
         command: bundle install
-      - run:
-        name: Run test
-        command: bundle exec rails test
 
 workflows:
    version: 2
