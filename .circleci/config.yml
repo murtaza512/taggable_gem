@@ -43,7 +43,7 @@ jobs:
     # Primary container image where all commands run
 
     docker:
-      - image: circleci/ruby:2.5.5
+      - image: circleci/ruby:2.5.5-node
         environment:
           RAILS_ENV: test
           PGHOST: 127.0.0.1
@@ -62,8 +62,8 @@ jobs:
       # Restore bundle cache
       - restore_cache:
           keys:
-            - rails-demo-{{ checksum "Gemfile.lock" }}
-            - rails-demo-
+            - taggable_gem-{{ checksum "Gemfile.lock" }}
+            - taggable_gem-
 
       # Bundle install dependencies
       - run:
