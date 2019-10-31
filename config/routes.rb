@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root to: 'restaurants#index'
+
   resources :restaurants
   get '/tagged', to: "restaurants#tagged", as: :tagged
 
