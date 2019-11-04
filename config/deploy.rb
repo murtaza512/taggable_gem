@@ -1,4 +1,4 @@
-server '3.133.116.206', port: 22, roles: [:web, :app, :db], primary: true
+server '13.58.171.114', port: 22, roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'git@github.com:murtaza512/taggable_gem.git'
 set :application,     'taggable_gem'
